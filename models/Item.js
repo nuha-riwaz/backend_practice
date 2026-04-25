@@ -22,6 +22,12 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Description is required"],
       trim: true,
     },
+    discount: {
+      type: Number,
+      default: 0,
+      min: [0, "Discount cannot be negative"],
+      max: [100, "Discount cannot exceed 100"],
+    },
     imageUrl: {
       type: String,
       default: "",
